@@ -1,5 +1,6 @@
 package com.nbjgroup.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -35,6 +36,7 @@ public class MaintenanceRequest {
     // Many-to-One relationship with Tenant
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "tenant_id", nullable = false)
+    @JsonBackReference
     private Tenant tenant;
 
     @NotBlank(message = "Title is required")

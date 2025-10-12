@@ -1,5 +1,6 @@
 package com.nbjgroup.controller;
 
+import com.nbjgroup.dto.maintenance.MaintenanceRequestDTO;
 import com.nbjgroup.entity.MaintenanceRequest;
 import com.nbjgroup.entity.MaintenanceRequestFile;
 import com.nbjgroup.entity.Tenant;
@@ -8,6 +9,8 @@ import com.nbjgroup.repository.MaintenanceRequestFileRepository;
 import com.nbjgroup.repository.MaintenanceRequestRepository;
 import com.nbjgroup.repository.TenantRepository;
 import com.nbjgroup.repository.UserRepository;
+import com.nbjgroup.service.MaintenanceService;
+import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +24,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -51,6 +55,9 @@ public class MaintenanceController {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private MaintenanceService maintenanceService;
 
     @Value("${app.upload.dir:${user.home}/nbj-uploads}")
     private String uploadDir;
@@ -175,64 +182,25 @@ public class MaintenanceController {
 
     @PostMapping
     @PreAuthorize("hasRole('TENANT')")
-    public ResponseEntity<?> createMaintenanceRequest(
-            @RequestParam("title") String title,
-            @RequestParam("description") String description,
-            @RequestParam("priority") String priority,
-            @RequestParam("category") String category,
-            @RequestParam(value = "files", required = false) MultipartFile[] files) {
-
+    public ResponseEntity<?> createMaintenanceRequest(@Valid @RequestBody MaintenanceRequestDTO requestDTO) {
         try {
-            Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-            String username = auth.getName();
+            // Get the currently logged-in user's email from the security context
+            Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+            String userEmail = authentication.getName();
 
-            Optional<User> userOpt = userRepository.findByEmail(username);
-            if (userOpt.isEmpty()) {
-                return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
-                        .body(createErrorResponse("User not found", "USER_NOT_FOUND"));
-            }
+            // Delegate all business logic to the service layer
+            MaintenanceRequest createdRequest = maintenanceService.createMaintenanceRequest(requestDTO, userEmail);
 
-            Optional<Tenant> tenantOpt = tenantRepository.findByUser(userOpt.get());
-            if (tenantOpt.isEmpty()) {
-                return ResponseEntity.status(HttpStatus.FORBIDDEN)
-                        .body(createErrorResponse("Tenant profile not found", "TENANT_NOT_FOUND"));
-            }
+            // Return the created object with a 201 Created status
+            return new ResponseEntity<>(createdRequest, HttpStatus.CREATED);
 
-            MaintenanceRequest request = new MaintenanceRequest();
-            request.setTitle(title);
-            request.setDescription(description);
-            request.setPriority(MaintenanceRequest.Priority.valueOf(priority.toUpperCase()));
-            request.setCategory(MaintenanceRequest.Category.valueOf(category));
-            request.setStatus(MaintenanceRequest.RequestStatus.PENDING);
-            request.setTenant(tenantOpt.get());
-            request.setCreatedAt(LocalDateTime.now());
-            request.setUpdatedAt(LocalDateTime.now());
-
-            MaintenanceRequest savedRequest = maintenanceRepository.save(request);
-
-            List<MaintenanceRequestFile> uploadedFiles = new ArrayList<>();
-            if (files != null && files.length > 0) {
-                uploadedFiles = handleFileUploads(files, savedRequest);
-            }
-
-            savedRequest.setAttachments(uploadedFiles);
-            savedRequest = maintenanceRepository.save(savedRequest);
-
-            logger.info("Maintenance request created - ID: {}, Tenant: {}",
-                    savedRequest.getId(), tenantOpt.get().getUser().getUsername());
-
-            Map<String, Object> response = new HashMap<>();
-            response.put("success", true);
-            response.put("message", "Maintenance request created successfully");
-            response.put("request", convertToDTO(savedRequest));
-            response.put("timestamp", LocalDateTime.now());
-
-            return ResponseEntity.status(HttpStatus.CREATED).body(response);
-
+        } catch (IllegalStateException | UsernameNotFoundException e) {
+            // Handle cases where the user or tenant profile isn't found
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).body(Map.of("error", e.getMessage()));
         } catch (Exception e) {
-            logger.error("Error creating maintenance request", e);
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body(createErrorResponse("Error creating maintenance request", "CREATE_ERROR"));
+            // Log the error for debugging
+            // logger.error("Error creating maintenance request", e);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(Map.of("error", "An unexpected error occurred."));
         }
     }
 
@@ -284,7 +252,7 @@ public class MaintenanceController {
             response.put("request", convertToDTO(updatedRequest));
             response.put("timestamp", LocalDateTime.now());
 
-            return ResponseEntity.ok(response);
+            return ResponseEntity.ok(convertToDTO(updatedRequest));
 
         } catch (Exception e) {
             logger.error("Error updating maintenance request ID: {}", id, e);

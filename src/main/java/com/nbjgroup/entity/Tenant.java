@@ -1,5 +1,6 @@
 package com.nbjgroup.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -34,6 +35,7 @@ public class Tenant {
     // One-to-One relationship with User
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false, unique = true)
+    @JsonManagedReference
     private User user;
 
     @NotBlank(message = "Property address is required")
@@ -87,12 +89,15 @@ public class Tenant {
 
     // One-to-Many relationships
     @OneToMany(mappedBy = "tenant", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonManagedReference("tenant-lease")
     private List<LeaseAgreement> leaseAgreements = new ArrayList<>();
 
     @OneToMany(mappedBy = "tenant", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonManagedReference("tenant-payment")
     private List<Payment> payments = new ArrayList<>();
 
     @OneToMany(mappedBy = "tenant", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonManagedReference
     private List<MaintenanceRequest> maintenanceRequests = new ArrayList<>();
 
     // Constructors

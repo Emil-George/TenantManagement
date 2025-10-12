@@ -2,6 +2,7 @@ package com.nbjgroup;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.scheduling.annotation.EnableAsync;
 
@@ -23,6 +24,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
  * @version 1.0.0
  */
 @SpringBootApplication
+@ComponentScan(basePackages = "com.nbjgroup")
 @EnableJpaAuditing
 @EnableAsync
 public class TenantManagementApplication {

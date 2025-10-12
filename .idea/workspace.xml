@@ -4,15 +4,78 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6898d3f4-a259-4deb-b6cb-8e13c19228df" name="Changes" comment="" />
+    <list default="true" id="6898d3f4-a259-4deb-b6cb-8e13c19228df" name="Changes" comment="initial">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nbjgroup/controller/StripeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nbjgroup/controller/TenantController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nbjgroup/dto/TenantResponseDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nbjgroup/dto/UserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/nbj-group.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/nbj-group.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nbjgroup/TenantManagementApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nbjgroup/TenantManagementApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nbjgroup/controller/MaintenanceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nbjgroup/controller/MaintenanceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nbjgroup/entity/LeaseAgreement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nbjgroup/entity/LeaseAgreement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nbjgroup/entity/MaintenanceRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nbjgroup/entity/MaintenanceRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nbjgroup/entity/Payment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nbjgroup/entity/Payment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nbjgroup/entity/Tenant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nbjgroup/entity/Tenant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nbjgroup/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nbjgroup/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nbjgroup/repository/TenantRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nbjgroup/repository/TenantRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nbjgroup/TenantManagementApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nbjgroup/TenantManagementApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nbjgroup/controller/MaintenanceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nbjgroup/controller/MaintenanceController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nbjgroup/entity/LeaseAgreement$LeaseStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nbjgroup/entity/LeaseAgreement$LeaseStatus.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nbjgroup/entity/LeaseAgreement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nbjgroup/entity/LeaseAgreement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nbjgroup/entity/MaintenanceRequest$Category.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nbjgroup/entity/MaintenanceRequest$Category.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nbjgroup/entity/MaintenanceRequest$Priority.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nbjgroup/entity/MaintenanceRequest$Priority.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nbjgroup/entity/MaintenanceRequest$RequestStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nbjgroup/entity/MaintenanceRequest$RequestStatus.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nbjgroup/entity/MaintenanceRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nbjgroup/entity/MaintenanceRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nbjgroup/entity/Payment$PaymentMethod.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nbjgroup/entity/Payment$PaymentMethod.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nbjgroup/entity/Payment$PaymentStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nbjgroup/entity/Payment$PaymentStatus.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nbjgroup/entity/Payment$PaymentType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nbjgroup/entity/Payment$PaymentType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nbjgroup/entity/Payment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nbjgroup/entity/Payment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nbjgroup/entity/Tenant$TenantStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nbjgroup/entity/Tenant$TenantStatus.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nbjgroup/entity/Tenant.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nbjgroup/entity/Tenant.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nbjgroup/entity/User$Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nbjgroup/entity/User$Role.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nbjgroup/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nbjgroup/entity/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nbjgroup/repository/TenantRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nbjgroup/repository/TenantRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tenant-management-1.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/tenant-management-1.0.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tenant-management-1.0.0.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/tenant-management-1.0.0.jar.original" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Emil-George&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Emil-George/TenantManagement&quot;,
+    &quot;accountId&quot;: &quot;324be6a6-1232-4a31-9b78-acb09480ad80&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 5
@@ -23,16 +86,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.TenantManagementApplication.executor": "Debug",
-    "Maven.tenant-management [clean,install].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/njbGroup/home/ubuntu/nbj-group/backend"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.TenantManagementApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;Maven.tenant-management [clean,install].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;serviceLogic&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Speechify&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -43,5 +107,16 @@
       <updated>1758579491132</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
