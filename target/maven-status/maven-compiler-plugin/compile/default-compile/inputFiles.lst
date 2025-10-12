@@ -1,5 +1,6 @@
 D:\njbGroup\home\ubuntu\nbj-group\backend\src\main\java\com\nbjgroup\controller\DashboardController.java
 D:\njbGroup\home\ubuntu\nbj-group\backend\src\main\java\com\nbjgroup\dto\dashboard\TenantDashboardDTO.java
+D:\njbGroup\home\ubuntu\nbj-group\backend\src\main\java\com\nbjgroup\config\AppConstants.java
 D:\njbGroup\home\ubuntu\nbj-group\backend\src\main\java\com\nbjgroup\dto\auth\RegisterRequest.java
 D:\njbGroup\home\ubuntu\nbj-group\backend\src\main\java\com\nbjgroup\service\TenantService.java
 D:\njbGroup\home\ubuntu\nbj-group\backend\src\main\java\com\nbjgroup\dto\maintenance\MaintenanceRequestDTO.java

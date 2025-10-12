@@ -5,7 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6898d3f4-a259-4deb-b6cb-8e13c19228df" name="Changes" comment="stripeConnect">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/nbj-group.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/nbj-group.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nbjgroup/controller/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nbjgroup/controller/DashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nbjgroup/repository/MaintenanceRequestRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nbjgroup/repository/MaintenanceRequestRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nbjgroup/repository/MaintenanceRequestRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nbjgroup/repository/MaintenanceRequestRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tenant-management-1.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/tenant-management-1.0.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tenant-management-1.0.0.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/tenant-management-1.0.0.jar.original" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +61,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.TenantManagementApplication.executor": "Run",
+    "Application.TenantManagementApplication.executor": "Debug",
     "Maven.tenant-management [clean,install].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -85,7 +95,15 @@
       <option name="project" value="LOCAL" />
       <updated>1760303093606</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="stripeConnect">
+      <option name="closed" value="true" />
+      <created>1760303392004</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1760303392004</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

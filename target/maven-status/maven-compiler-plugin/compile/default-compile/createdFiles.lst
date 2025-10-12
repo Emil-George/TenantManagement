@@ -21,6 +21,7 @@ com\nbjgroup\repository\UserRepository.class
 com\nbjgroup\controller\FileController.class
 com\nbjgroup\dto\auth\RegisterRequest.class
 com\nbjgroup\controller\TenantController.class
+com\nbjgroup\config\AppConstants.class
 com\nbjgroup\service\DashboardService.class
 com\nbjgroup\repository\MaintenanceRequestRepository.class
 com\nbjgroup\security\CustomUserDetailsService.class
