@@ -19,12 +19,14 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import jakarta.annotation.PostConstruct;
 import java.util.Map;
 
+import static com.nbjgroup.config.AppConstants.STRIPE_SECRET_KEY;
+
 @RestController
 @RequestMapping("/stripe" )
 public class StripeController {
 
 //    @Value("${stripe.secret-key:}")
-    private String stripeSecretKey = "sk_test_51SFFTo0JWONq8U474tzNLPALRnAdzIvtYlfiUlaPpCINzBJ4UADS1TNyKPwoRkKjaYfqjt14UAGaRiJRYTsci72F00J8jWZ7XJ";
+    private String stripeSecretKey=STRIPE_SECRET_KEY;
 
     @PostConstruct
     public void init() {
