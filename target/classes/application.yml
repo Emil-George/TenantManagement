@@ -9,6 +9,11 @@ spring:
     password: ${DB_PASSWORD:nbjpass123}
     driver-class-name: org.postgresql.Driver
 
+  stripe:
+    secret-key: sk_test_51SFFTo0JWONq8U474tzNLPALRnAdzIvtYlfiUlaPpCINzBJ4UADS1TNyKPwoRkKjaYfqjt14UAGaRiJRYTsci72F00J8jWZ7XJ
+    webhook-secret: ${STRIPE_WEBHOOK_SECRET:whsec_...} # We will get this later
+
+
   # JPA Configuration
   jpa:
     hibernate:
@@ -19,11 +24,15 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
     defer-datasource-initialization: true
+
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
   
   # SQL Initialization
   sql:
     init:
-      mode: always
+      mode: never
       data-locations: classpath:data.sql
       continue-on-error: true
   

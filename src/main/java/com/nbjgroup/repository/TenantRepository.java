@@ -137,13 +137,10 @@ public interface TenantRepository extends JpaRepository<Tenant, Long> {
      * Find tenants with user details (for admin dashboard)
      */
     @Query("SELECT t FROM Tenant t JOIN FETCH t.user ORDER BY t.createdAt DESC")
-    List<Tenant> findAllWithUserDetails();
+    List<Tenant> findAllWithUserDetailsList();
 
-    /**
-     * Find tenants with user details and pagination
-     */
     @Query("SELECT t FROM Tenant t JOIN FETCH t.user")
-    Page<Tenant> findAllWithUserDetails(Pageable pageable);
+    Page<Tenant> findAllWithUserDetailsPaginated(Pageable pageable);
 
     /**
      * Find tenants by emergency contact information

@@ -117,4 +117,13 @@ public interface MaintenanceRequestRepository extends JpaRepository<MaintenanceR
             "GROUP BY EXTRACT(YEAR FROM mr.created_at), EXTRACT(MONTH FROM mr.created_at) " +
             "ORDER BY year DESC, month DESC", nativeQuery = true)
     List<Object[]> getMonthlyMaintenanceSummary(@Param("startDate") LocalDateTime startDate, @Param("endDate") LocalDateTime endDate);
+
+    /**
+     * Counts maintenance requests for a specific tenant based on their status.
+     *
+     * @param tenant The tenant entity.
+     * @param status The status of the requests to count.
+     * @return The number of requests matching the criteria.
+     */
+    long countByTenantAndStatus(Tenant tenant, MaintenanceRequest.RequestStatus status);
 }

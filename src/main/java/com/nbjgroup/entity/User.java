@@ -1,5 +1,6 @@
 package com.nbjgroup.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -73,7 +74,11 @@ public class User implements UserDetails {
 
     // One-to-One relationship with Tenant (only for TENANT role)
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonBackReference
     private Tenant tenant;
+
+    @Column(name = "stripe_account_id")
+    private String stripeAccountId;
 
     // Constructors
     public User() {}
@@ -228,6 +233,14 @@ public class User implements UserDetails {
 
     public void setTenant(Tenant tenant) {
         this.tenant = tenant;
+    }
+
+    public String getStripeAccountId() {
+        return stripeAccountId;
+    }
+
+    public void setStripeAccountId(String stripeAccountId) {
+        this.stripeAccountId = stripeAccountId;
     }
 
     // equals, hashCode, toString

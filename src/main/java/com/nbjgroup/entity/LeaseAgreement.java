@@ -1,5 +1,6 @@
 package com.nbjgroup.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import org.springframework.data.annotation.CreatedDate;
@@ -32,6 +33,7 @@ public class LeaseAgreement {
     // Many-to-One relationship with Tenant
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "tenant_id", nullable = false)
+    @JsonBackReference("tenant-lease")
     private Tenant tenant;
 
     @NotNull(message = "Start date is required")
