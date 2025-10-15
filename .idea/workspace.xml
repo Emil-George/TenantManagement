@@ -4,14 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6898d3f4-a259-4deb-b6cb-8e13c19228df" name="Changes" comment="stripeConnect">
+    <list default="true" id="6898d3f4-a259-4deb-b6cb-8e13c19228df" name="Changes" comment="tenant dashboard cleanup">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nbjgroup/dto/TenantUpdateDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/nbj-group.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/nbj-group.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nbjgroup/controller/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nbjgroup/controller/DashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nbjgroup/repository/MaintenanceRequestRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nbjgroup/repository/MaintenanceRequestRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nbjgroup/repository/MaintenanceRequestRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nbjgroup/repository/MaintenanceRequestRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nbjgroup/controller/TenantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nbjgroup/controller/TenantController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nbjgroup/dto/TenantResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nbjgroup/dto/TenantResponseDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nbjgroup/security/CustomUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nbjgroup/security/CustomUserDetailsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nbjgroup/security/CustomUserDetailsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nbjgroup/security/CustomUserDetailsService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/tenant-management-1.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/tenant-management-1.0.0.jar" afterDir="false" />
@@ -59,17 +59,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.TenantManagementApplication.executor": "Debug",
-    "Maven.tenant-management [clean,install].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "serviceLogic",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/Speechify"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.TenantManagementApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;Maven.tenant-management [clean,install].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;serviceLogic&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Speechify&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

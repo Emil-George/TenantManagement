@@ -5,11 +5,15 @@ import com.nbjgroup.repository.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.DisabledException;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.Collections;
 
 /**
  * Custom UserDetailsService implementation for loading user-specific data.
@@ -28,26 +32,22 @@ public class CustomUserDetailsService implements UserDetailsService {
      */
     @Override
     @Transactional(readOnly = true)
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        logger.debug("Loading user by username: {}", username);
-        
-        User user = userRepository.findByEmail(username)
-                .orElseThrow(() -> {
-                    logger.warn("User not found with email: {}", username);
-                    return new UsernameNotFoundException("User not found with email: " + username);
-                });
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+        User user = userRepository.findByEmail(email)
+                .orElseThrow(() -> new UsernameNotFoundException("User not found with email: " + email));
 
-        logger.debug("User found: {} with role: {}", user.getEmail(), user.getRole());
-        
-        // Check if user account is active
+        //Check if the user is active ---
         if (!user.getIsActive()) {
-            logger.warn("User account is inactive: {}", username);
-            throw new UsernameNotFoundException("User account is inactive: " + username);
+            logger.warn("Authentication attempt for inactive user: {}", email);
+            throw new DisabledException("User account is inactive.");
         }
 
-        return user; // User entity implements UserDetails
+        return new org.springframework.security.core.userdetails.User(
+                user.getEmail(),
+                user.getPassword(),
+                Collections.singletonList(new SimpleGrantedAuthority("ROLE_" + user.getRole().name()))
+        );
     }
-
     /**
      * Load user by ID (useful for JWT token validation)
      */
