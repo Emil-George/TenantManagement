@@ -4,16 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6898d3f4-a259-4deb-b6cb-8e13c19228df" name="Changes" comment="tenant dashboard cleanup">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nbjgroup/dto/TenantUpdateDTO.java" afterDir="false" />
+    <list default="true" id="6898d3f4-a259-4deb-b6cb-8e13c19228df" name="Changes" comment="tenantEdit">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nbjgroup/controller/PaymentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nbjgroup/dto/PaymentHistoryDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nbjgroup/service/PaymentService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/nbj-group.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/nbj-group.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nbjgroup/controller/TenantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nbjgroup/controller/TenantController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nbjgroup/dto/TenantResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nbjgroup/dto/TenantResponseDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nbjgroup/security/CustomUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nbjgroup/security/CustomUserDetailsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nbjgroup/security/CustomUserDetailsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nbjgroup/security/CustomUserDetailsService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nbjgroup/controller/StripeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nbjgroup/controller/StripeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nbjgroup/repository/PaymentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nbjgroup/repository/PaymentRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/tenant-management-1.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/tenant-management-1.0.0.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/tenant-management-1.0.0.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/tenant-management-1.0.0.jar.original" afterDir="false" />
     </list>
@@ -103,7 +101,15 @@
       <option name="project" value="LOCAL" />
       <updated>1760303392004</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="tenantEdit">
+      <option name="closed" value="true" />
+      <created>1760555143526</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1760555143526</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -119,6 +125,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="stripeConnect" />
-    <option name="LAST_COMMIT_MESSAGE" value="stripeConnect" />
+    <MESSAGE value="tenantEdit" />
+    <option name="LAST_COMMIT_MESSAGE" value="tenantEdit" />
   </component>
 </project>

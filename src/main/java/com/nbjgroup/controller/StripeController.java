@@ -37,6 +37,28 @@ public class StripeController {
     @Autowired
     private UserRepository userRepository; // Inject the user repository
 
+    @GetMapping("/account-status")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<?> getStripeAccountStatus() {
+        try {
+            Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+            String userEmail = authentication.getName();
+            User adminUser = userRepository.findByEmail(userEmail)
+                    .orElseThrow(() -> new RuntimeException("Admin user not found."));
+            if (adminUser.getStripeAccountId() == null) {
+                return ResponseEntity.ok(Map.of("details_submitted", false));
+            }
+            Account account = Account.retrieve(adminUser.getStripeAccountId());
+            return ResponseEntity.ok(Map.of("details_submitted", account.getDetailsSubmitted()));
+        } catch (StripeException e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(Map.of("error", true, "message", e.getMessage()));
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body(Map.of("error", true, "message", e.getMessage()));
+        }
+    }
+
     @PostMapping("/create-connect-account")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<?> createConnectAccount() {
