@@ -1,10 +1,12 @@
 package com.nbjgroup.service;
 
+import com.nbjgroup.dto.dashboard.AdminDashboardDTO;
 import com.nbjgroup.dto.dashboard.TenantDashboardDTO;
 import com.nbjgroup.entity.MaintenanceRequest;
 import com.nbjgroup.entity.Tenant;
 import com.nbjgroup.entity.User;
 import com.nbjgroup.repository.MaintenanceRequestRepository;
+import com.nbjgroup.repository.PropertyRepository;
 import com.nbjgroup.repository.TenantRepository;
 import com.nbjgroup.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +22,16 @@ public class DashboardService {
     @Autowired private UserRepository userRepository;
     @Autowired private TenantRepository tenantRepository;
     @Autowired private MaintenanceRequestRepository maintenanceRepository;
+    @Autowired private PropertyRepository propertyRepository;
+
+    @Transactional(readOnly = true)
+    public AdminDashboardDTO getAdminDashboardData() {
+                AdminDashboardDTO dashboardData = new AdminDashboardDTO();
+                dashboardData.setTotalTenants(tenantRepository.count());
+                dashboardData.setPendingMaintenanceRequests(maintenanceRepository.countByStatus(MaintenanceRequest.RequestStatus.PENDING));
+                dashboardData.setTotalProperties(propertyRepository.count());
+                return dashboardData;
+    }
 
     @Transactional(readOnly = true)
     public TenantDashboardDTO getTenantDashboardData(String userEmail) {

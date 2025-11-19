@@ -4,14 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6898d3f4-a259-4deb-b6cb-8e13c19228df" name="Changes" comment="tenantEdit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nbjgroup/controller/PaymentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nbjgroup/dto/PaymentHistoryDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nbjgroup/service/PaymentService.java" afterDir="false" />
+    <list default="true" id="6898d3f4-a259-4deb-b6cb-8e13c19228df" name="Changes" comment="PaymentHistory">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nbjgroup/controller/PropertyController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nbjgroup/dto/PropertyDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nbjgroup/dto/dashboard/AdminDashboardDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nbjgroup/entity/Property.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nbjgroup/repository/PropertyRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nbjgroup/service/PropertyService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/config.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/nbj-group.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/nbj-group.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nbjgroup/config/AppConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nbjgroup/config/AppConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nbjgroup/controller/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nbjgroup/controller/DashboardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/nbjgroup/controller/StripeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nbjgroup/controller/StripeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nbjgroup/repository/PaymentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nbjgroup/repository/PaymentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nbjgroup/entity/Tenant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nbjgroup/entity/Tenant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nbjgroup/repository/TenantRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nbjgroup/repository/TenantRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nbjgroup/service/DashboardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nbjgroup/service/DashboardService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nbjgroup/entity/Tenant$TenantStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nbjgroup/entity/Tenant$TenantStatus.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nbjgroup/entity/Tenant.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nbjgroup/entity/Tenant.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nbjgroup/repository/PaymentRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nbjgroup/repository/PaymentRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nbjgroup/repository/TenantRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nbjgroup/repository/TenantRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/tenant-management-1.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/tenant-management-1.0.0.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/tenant-management-1.0.0.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/tenant-management-1.0.0.jar.original" afterDir="false" />
     </list>
@@ -47,6 +65,9 @@
     &quot;accountId&quot;: &quot;324be6a6-1232-4a31-9b78-acb09480ad80&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 5
@@ -60,14 +81,31 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Application.TenantManagementApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.Unnamed.executor&quot;: &quot;Run&quot;,
     &quot;Maven.tenant-management [clean,install].executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;serviceLogic&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Speechify&quot;
+    &quot;last_opened_file_path&quot;: &quot;D:/TenantWebApp&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
+  <component name="RunManager">
+    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="envFilePaths">
+        <option value="$PROJECT_DIR$/src/main/resources/config.env" />
+      </option>
+      <option name="MAIN_CLASS_NAME" value="com.nbjgroup.TenantManagementApplication" />
+      <module name="tenant-management" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -109,7 +147,15 @@
       <option name="project" value="LOCAL" />
       <updated>1760555143526</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="PaymentHistory">
+      <option name="closed" value="true" />
+      <created>1760806552155</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1760806552155</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -126,6 +172,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="stripeConnect" />
     <MESSAGE value="tenantEdit" />
-    <option name="LAST_COMMIT_MESSAGE" value="tenantEdit" />
+    <MESSAGE value="PaymentHistory" />
+    <option name="LAST_COMMIT_MESSAGE" value="PaymentHistory" />
   </component>
 </project>

@@ -1,5 +1,6 @@
 package com.nbjgroup.controller;
 
+import com.nbjgroup.dto.dashboard.AdminDashboardDTO;
 import com.nbjgroup.entity.MaintenanceRequest;
 import com.nbjgroup.entity.Tenant;
 import com.nbjgroup.entity.User;
@@ -7,6 +8,7 @@ import com.nbjgroup.repository.MaintenanceRequestRepository;
 import com.nbjgroup.repository.PaymentRepository; // Assuming you have this
 import com.nbjgroup.repository.TenantRepository;
 import com.nbjgroup.repository.UserRepository;
+import com.nbjgroup.service.DashboardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -30,7 +32,17 @@ public class DashboardController {
     @Autowired
     private MaintenanceRequestRepository maintenanceRequestRepository;
 
+    @Autowired
+    private DashboardService dashboardService;
+
     // Inject other repositories like PaymentRepository as needed
+
+    @GetMapping("/admin")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<AdminDashboardDTO> getAdminDashboardData() {
+                AdminDashboardDTO dashboardData = dashboardService.getAdminDashboardData();
+                return ResponseEntity.ok(dashboardData);
+            }
 
     @GetMapping("/tenant")
     @PreAuthorize("hasRole('TENANT')")

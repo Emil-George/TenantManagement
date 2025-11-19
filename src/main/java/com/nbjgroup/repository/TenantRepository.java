@@ -121,6 +121,8 @@ public interface TenantRepository extends JpaRepository<Tenant, Long> {
      */
     long countByPropertyAddress(String propertyAddress);
 
+    long countByProperty_Id(Long propertyId);
+
     /**
      * Get tenant statistics
      */

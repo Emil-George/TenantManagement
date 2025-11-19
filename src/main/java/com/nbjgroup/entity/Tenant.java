@@ -100,6 +100,14 @@ public class Tenant {
     @JsonManagedReference
     private List<MaintenanceRequest> maintenanceRequests = new ArrayList<>();
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "property_id") // column in tenants table
+    private Property property;
+
+    // getter + setter
+    public Property getProperty() { return property; }
+    public void setProperty(Property property) { this.property = property; }
+
     // Constructors
     public Tenant() {}
 
